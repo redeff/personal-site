@@ -52,7 +52,7 @@ body {
   flex-wrap: wrap;
 }
 
-span.lecture-date {
+span.date {
   color: white;
   background: linear-gradient(135deg, var(--fst-col), var(--snd-col));
   margin-right: 1em;
