@@ -5,12 +5,14 @@ p {
 
 html {
   font-family: "Verdana", sans-serif;
-  --fst-col: #0264cc;
-  --snd-col: #02cc64;
+  --fst-col: #0066cc;
+  --snd-col: #0066cc;
+  --thd-col: #880088;
+
   --grey-fg: #d0d0d0;
   --grey-bg: #f6f6f6;
   --grey-dark: #e6e6e6;
-  --grey-darker: #888888;
+  --grey-darker: #555555;
 }
 
 h2 a {
@@ -54,7 +56,7 @@ body {
 
 span.date {
   color: white;
-  background: linear-gradient(135deg, var(--fst-col), var(--snd-col));
+  background: linear-gradient(135deg, var(--snd-col), var(--thd-col));
   margin-right: 1em;
   padding-right: 3px;
   padding-left: 3px;
@@ -111,6 +113,7 @@ h2 {
 
   nav ul + ul a {
     color: var(--grey-darker);
+    font-size: 14pt;
   }
 }
 
