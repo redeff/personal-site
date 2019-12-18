@@ -52,6 +52,8 @@ body {
   display: flex;
   margin: 0px;
   flex-wrap: wrap;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 span.date {
@@ -65,6 +67,12 @@ span.date {
 
 main ul li {
   margin: 2em;
+}
+
+main p {
+  max-width: 90vw;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 h2 {
