@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Gelasio&display=swap');
+@namespace url('http://www.w3.org/1999/xhtml');
+@namespace m url('http://www.w3.org/1998/Math/MathML');
+
+m|math {
+    font-family: Latin Modern Math;
+}
 
 p {
   line-height: 1.5em;
