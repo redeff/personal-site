@@ -21,9 +21,9 @@ main h1 {
 
 html {
   font-family: "Helvetica", sans-serif;
-  --fst-col: #0066cc;
-  --snd-col: #0066cc;
-  --thd-col: #880088;
+  --fst-col: #059;
+  --snd-col: #059;
+  --thd-col: #075;
 
   --grey-fg: #d0d0d0;
   --grey-bg: #f6f6f6;
@@ -146,10 +146,12 @@ main p {
     margin-top: 0.3em;
   }
 
+  /*
   nav ul + ul a {
     color: var(--grey-darker);
     font-size: 14pt;
   }
+  */
 }
 
 @media (max-width: 900px) {
