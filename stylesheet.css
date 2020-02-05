@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Gelasio&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Gelasio&display=swap');
 @namespace url('http://www.w3.org/1999/xhtml');
 @namespace m url('http://www.w3.org/1998/Math/MathML');
 
@@ -15,6 +15,10 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Palatino', serif;
 }
 
+nav a {
+  color: white;
+}
+
 main h1 {
   text-align: center;
 }
@@ -24,6 +28,8 @@ html {
   --fst-col: #059;
   --snd-col: #059;
   --thd-col: #075;
+  --fst-col-bg: #022;
+  --snd-col-bg: #033;
 
   --grey-fg: #d0d0d0;
   --grey-bg: #f6f6f6;
@@ -68,8 +74,12 @@ header nav {
   width: 100%;
 }
 
+header h1 {
+  color: white;
+}
+
 header {
-  background: var(--grey-bg);
+  background: var(--fst-col-bg);
 }
 
 body {
@@ -123,7 +133,7 @@ main p {
     padding-bottom: 5vh;
     width: calc(20vw - 1px);
     text-align: right;
-    border-right: 1px solid var(--grey-fg);
+    // border-right: 1px solid var(--grey-fg);
   }
 
   html, body {
@@ -186,7 +196,7 @@ main p {
   }
 
   nav ul + ul {
-    background: var(--grey-dark);
+    background: var(--snd-col-bg);
   }
 
   nav ul {
@@ -194,7 +204,7 @@ main p {
     flex-wrap: wrap;
     justify-content: center;
     padding: 5%;
-    border-bottom: 1px solid var(--grey-fg);
+    // border-bottom: 1px solid var(--grey-fg);
   }
 
   nav ul li {
