@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta charset="utf-8"/>
     <script src="https://fred-wang.github.io/mathml-warning.js/mpadded-min.js"></script>
     <link rel="stylesheet" href="stylesheet.css" type="text/css"/>
     <title>Carlos Miguel Soto</title>
@@ -22,7 +23,7 @@
       <h1>Welcome to my personal page!</h1>
 <img src="me.jpg" alt="Photo of Carlos Miguel Soto">
 <p>
-  I'm Carlos Miguel Soto, from <a href="https://goo.gl/maps/4R65y4okiVe2aiMy5">Corrientes, Argentina</a>. I'm an 18 year old Computer Science student at the <a href="http://www.uba.ar/">University of Buenos Aires</a>.
+I'm Carlos Miguel Soto, from <a href="https://goo.gl/maps/4R65y4okiVe2aiMy5">Corrientes, Argentina</a>. I'm an <span id="age">18</span> year old Computer Science student at the <a href="http://www.uba.ar/">University of Buenos Aires</a>.
 </p>
 <p>
   I've participated in multiple informatics and mathematics competitions throughout my highschool years, incuding the <a href="https://stats.ioinformatics.org/people/6438">IOI</a> and the <a href="https://www.imo-official.org/participant_r.aspx?id=26842">IMO</a>.
@@ -30,6 +31,14 @@
 <p>
   In this page you will mostly find my posted university notes.
 </p>
+<script>
+	var today = new Date();
+	var after_birthday = 0;
+	if(today.getMonth() > 3) after_birthday = 1;
+	if(today.getMonth() == 3 && today.getDate() >= 15) after_birthday = 1;
+	var res = today.getFullYear() - 2002 + after_birthday;
+	document.getElementById("age").innerHTML = res;
+</script>
 
     </main>
   </body>

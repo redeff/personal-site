@@ -127,13 +127,23 @@ main p {
   }
 
   header {
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-    width: calc(20vw - 1px);
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    width: 15rem;
     text-align: right;
     // border-right: 1px solid var(--grey-fg);
+  }
+
+  header h1 {
+	font-size: 50pt;
+  	margin-right: calc(-2vw - 0.15em);
+	line-height: 0.8em;
+  	margin-top: 2vh;
+  	margin-bottom: 2vh;
+  	margin-left: 0;
+	text-transform: lowercase;
   }
 
   html, body {
@@ -141,7 +151,7 @@ main p {
   }
 
   main {
-    width: calc(100% - 55vw);
+    width: calc(100% - 30vw - 15rem);
     padding-left: 5vw;
     padding-right: 20vw;
     padding-top: 5vh;
@@ -203,7 +213,7 @@ main p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 5%;
+    padding: 1rem;
     // border-bottom: 1px solid var(--grey-fg);
   }
 
