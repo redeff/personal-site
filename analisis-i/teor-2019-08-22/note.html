@@ -3,9 +3,37 @@
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta charset="utf-8"/>
-    <script src="https://fred-wang.github.io/mathjax.js/mpadded.js"></script>
     <link rel="stylesheet" href="../../stylesheet.css" type="text/css"/>
     <title>Carlos Miguel Soto</title>
+	<script>
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/*jslint browser: true*/
+
+"use strict";
+
+(function () {
+    window.addEventListener("load", function () {
+        var box, div, script, namespaceURI;
+        // First check whether the page contains any <math> element.
+        namespaceURI = "http://www.w3.org/1998/Math/MathML";
+        if (document.body.getElementsByTagNameNS(namespaceURI, "math")[0]) {
+            // Create a div to test mpadded, using Kuma's "offscreen" CSS
+            document.body.insertAdjacentHTML("afterbegin", "<div style='border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;'><math xmlns='" + namespaceURI + "'><mpadded height='23px' width='77px'></mpadded></math></div>");
+            div = document.body.firstChild;
+            box = div.firstChild.firstChild.getBoundingClientRect();
+            document.body.removeChild(div);
+            if (Math.abs(box.height - 23) > 1  || Math.abs(box.width - 77) > 1) {
+                // Insert the MathJax.js script.
+                script = document.createElement("script");
+                script.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML";
+                document.head.appendChild(script);
+            }
+        }
+    });
+}());
+	</script>
   </head>
   <body>
     <header>
