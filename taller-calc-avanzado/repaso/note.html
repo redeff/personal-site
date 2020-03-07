@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../../stylesheet.css" type="text/css"/>
+    <title>Carlos Miguel Soto</title>
+	<script>
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+/*jslint browser: true*/
+
+"use strict";
+
+(function () {
+    window.addEventListener("load", function () {
+        var box, div, script, namespaceURI;
+        // First check whether the page contains any <math> element.
+        namespaceURI = "http://www.w3.org/1998/Math/MathML";
+        if (document.body.getElementsByTagNameNS(namespaceURI, "math")[0]) {
+            // Create a div to test mpadded, using Kuma's "offscreen" CSS
+            document.body.insertAdjacentHTML("afterbegin", "<div style='border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;'><math xmlns='" + namespaceURI + "'><mpadded height='23px' width='77px'></mpadded></math></div>");
+            div = document.body.firstChild;
+            box = div.firstChild.firstChild.getBoundingClientRect();
+            document.body.removeChild(div);
+            if (Math.abs(box.height - 23) > 1  || Math.abs(box.width - 77) > 1) {
+                // Insert the MathJax.js script.
+                script = document.createElement("script");
+                script.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML";
+                document.head.appendChild(script);
+            }
+        }
+    });
+}());
+	</script>
+  </head>
+  <body>
+    <header>
+      <h1>Carlos Miguel Soto</h1>
+      <nav>
+        <ul>
+          <li><a href="../../index.html">homepage</a></li>
+          <li><a href="../../awards.html">awards</a></li>
+          <li><a href="../../notes.html">notes</a></li>
+        </ul>
+        <ul><li><a href="../../notes.html#algebra-i">álgebra i</a></li>
+<li><a href="../../notes.html#lineal">álgebra lineal</a></li>
+<li><a href="../../notes.html#analisis-i">análisis i</a></li>
+<li><a href="../../notes.html#haskell">taller de álgebra i</a></li>
+<li><a href="../../notes.html#analisis-ii">análisis ii</a></li>
+<li><a href="../../notes.html#taller-calc-avanzado">taller de cálculo avanzado</a></li></ul>
+      </nav>
+    </header>
+    <main>
+      <h2 class="unnumbered" id="axiomas">Axiomas</h2>
+<h3 class="unnumbered" id="monoide-conmutativo">Monoide Conmutativo</h3>
+<ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>*</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>*</mo><mi>c</mi><mo>=</mo><mi>a</mi><mo>*</mo><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>*</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(a * b) * c = a * (b*c)</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>*</mo><mi>b</mi><mo>=</mo><mi>b</mi><mo>*</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">a*b = b*a</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>∃</mo><mi>e</mi><mo>:</mo><mi>e</mi><mo>*</mo><mi>a</mi><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\exists e : e*a = a</annotation></semantics></math></p></li>
+</ol>
+<h4 class="unnumbered" id="propiedades">Propiedades</h4>
+<ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math> es único</p></li>
+<li><p>Inversos, si existen, son únicos.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>*</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mi>′</mi><mo>=</mo><mi>a</mi><mi>′</mi><mo>*</mo><mi>b</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">(a*b)&#39; = a&#39;*b&#39;</annotation></semantics></math>, si existen.</p></li>
+</ol>
+<h4 class="unnumbered" id="morfismos">Morfismos</h4>
+<p>Un morfismo de monoides <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>A</mi><mo>→</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">f : A \to B</annotation></semantics></math> es aquel que cumple</p>
+<ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo>*</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>*</mo><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(a * b) = f(a) * f(b)</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>e</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>e</mi></mrow><annotation encoding="application/x-tex">f(e) = e</annotation></semantics></math></p></li>
+</ol>
+<h4 class="unnumbered" id="submonoides">Submonoides</h4>
+<p>Es un subconjunto de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">B \in A</annotation></semantics></math> que contiene al neutro y es cerrado bajo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow></mrow><annotation encoding="application/x-tex"></annotation></semantics></math>.</p>
+<h4 class="unnumbered" id="grupo-de-unidades">Grupo de Unidades</h4>
+<p>El conjunto de los elementos inversibles <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">U(A) \in A</annotation></semantics></math> es un submonoide.</p>
+<h3 class="unnumbered" id="grupo">Grupo</h3>
+<p>Es un monoide (conmutativo) donde todos sus elementos son inversibles.</p>
+<h3 class="unnumbered" id="anillo">Anillo</h3>
+<p>Es un conjunto <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math> con dos operaciones, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>+</mo><annotation encoding="application/x-tex">+</annotation></semantics></math> y <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>⋅</mo><annotation encoding="application/x-tex">\cdot</annotation></semantics></math>, tal que</p>
+<ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mo>+</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(A, +)</annotation></semantics></math> es un grupo conmutativo.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo>,</mo><mo>⋅</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(A, \cdot)</annotation></semantics></math> es un monoide conmutativo.</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>a</mi><mi>b</mi><mo>+</mo><mi>a</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">a(b + c) = ab + ac</annotation></semantics></math></p></li>
+</ol>
+<h4 class="unnumbered" id="propiedades-1">Propiedades</h4>
+<ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>+</mo><mi>c</mi><mo>=</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo>⇒</mo><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a + c = b + c \Rightarrow a = b</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mn>0</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a0 = 0</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mo>−</mo><mi>a</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">a(-b) = -ab</annotation></semantics></math></p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mo>−</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>a</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">(-a)(-b) = ab</annotation></semantics></math></p></li>
+<li><p>Si <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">1 = 0</annotation></semantics></math>, luego <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">A = \{0\}</annotation></semantics></math></p></li>
+</ol>
+<p>Un <em>divisor de 0</em> es un <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math> tal que existe un <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo>∈</mo><mi>A</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">b \in A \setminus \{0\}</annotation></semantics></math> con <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mi>b</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">ab = 0</annotation></semantics></math>.</p>
+<h4 class="unnumbered" id="subanillo">Subanillo</h4>
+<p>Un subanillo es algo que es subgrupo del grupo adidtivo y submonoide del monoide multiplicativo</p>
+<h3 class="unnumbered" id="dominio">Dominio</h3>
+<p>Un anillo es dominio cuando no tiene divisores de <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0</mn><annotation encoding="application/x-tex">0</annotation></semantics></math> no nulos</p>
+<h3 class="unnumbered" id="cuerpo">Cuerpo</h3>
+<p>Un anillo es cuerpo cuando todos los elementos no nulos son inversibles, es decir <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mo stretchy="false" form="prefix">(</mo><mi>A</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>A</mi><mo>\</mo><mo stretchy="false" form="prefix">{</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">U(A) = A \setminus \{0\}</annotation></semantics></math></p>
+<h3 class="unnumbered" id="anillo-ordenado">Anillo Ordenado</h3>
+<p>Es un anillo <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math> con un orden total <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>&lt;</mo><annotation encoding="application/x-tex">&lt;</annotation></semantics></math> tal que:</p>
+<ol>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo>⇒</mo><mi>a</mi><mo>+</mo><mi>c</mi><mo>&lt;</mo><mi>b</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a &lt; b \Rightarrow a + c &lt; b + c</annotation></semantics></math> (Compatibilidad con la suma)</p></li>
+<li><p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>&lt;</mo><mi>b</mi><mo>,</mo><mn>0</mn><mo>&lt;</mo><mi>c</mi><mo>⇒</mo><mi>a</mi><mi>c</mi><mo>&lt;</mo><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">a &lt; b, 0 &lt; c \Rightarrow ac &lt; bc</annotation></semantics></math> (Compatibilidad con el producto)</p></li>
+</ol>
+
+    </main>
+  </body>
+</html>
