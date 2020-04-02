@@ -43,6 +43,7 @@
           <li><a href="index.html">homepage</a></li>
           <li><a href="awards.html">awards</a></li>
           <li><a href="notes.html">notes</a></li>
+		  <!-- <li><a href="resume.html">résumé</a></li> -->
         </ul>
         
       </nav>
@@ -62,8 +63,8 @@
 <script>
 	var today = new Date();
 	var after_birthday = 0;
-	if(today.getMonth() > 3) after_birthday = 1;
-	if(today.getMonth() == 3 && today.getDate() >= 15) after_birthday = 1;
+	if(today.getMonth() > 2) after_birthday = 1;
+	if(today.getMonth() == 2 && today.getDate() >= 15) after_birthday = 1;
 	var res = today.getFullYear() - 2002 + after_birthday;
 	document.getElementById("age").innerHTML = res;
 </script>
